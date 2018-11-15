@@ -11,9 +11,19 @@ public class SwapUtil {
 	 * @param j
 	 */
     public static void swap(List l, int i, int j){
-        Object temp = l.get(i);
-        l.add(i,l.get(j));
-        l.add(j,temp);
+        int lower, greater;
+    	if(i<j) {
+        	lower = i;
+        	greater = j;
+        } else {
+        	lower = j;
+        	greater = i;        	
+        }
+    	Object temp = l.get(greater);
+        l.remove(greater);
+        l.add(l.get(lower));
+        l.remove(lower);
+        l.add(lower,temp);
         return;
     }
 
