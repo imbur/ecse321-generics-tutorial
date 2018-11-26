@@ -21,7 +21,7 @@ public class SwapUtil {
         }
     	Object temp = l.get(greater);
         l.remove(greater);
-        l.add(l.get(lower));
+        l.add(greater,l.get(lower));
         l.remove(lower);
         l.add(lower,temp);
         return;
